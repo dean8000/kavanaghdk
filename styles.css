@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom right, #0f172a, #064e3b);
+    background: #0f172a;
 }
 
 .grid {
