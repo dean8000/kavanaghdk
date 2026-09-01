@@ -97,11 +97,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.1em;
-    background: linear-gradient(to right, #10b981, #22c55e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 3s ease-in-out infinite;
+    color: #000;
 }
 
 @media (min-width: 640px) {
@@ -116,22 +112,10 @@ body {
     }
 }
 
-@keyframes shimmer {
-    0%, 100% {
-        background-position: 0% center;
-    }
-    50% {
-        background-position: 100% center;
-    }
-}
 
 @media (prefers-reduced-motion: reduce) {
     .orb-1,
     .orb-2 {
-        animation: none;
-    }
-    
-    .title {
         animation: none;
     }
 }
