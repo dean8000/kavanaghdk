@@ -122,11 +122,7 @@ body {
     letter-spacing: 0.1em;
     color: rgba(255, 255, 255, 0.05);
     mix-blend-mode: screen;
-    text-shadow: 
-        0 0 10px rgba(16, 185, 129, 0),
-        0 0 20px rgba(16, 185, 129, 0),
-        0 0 30px rgba(16, 185, 129, 0);
-    animation: text-glow 3s ease-in-out infinite;
+    animation: text-flicker 8s infinite;
 }
 
 @media (min-width: 640px) {
@@ -142,18 +138,12 @@ body {
 }
 
 
-@keyframes text-glow {
-    0%, 100% {
-        text-shadow: 
-            0 0 10px rgba(16, 185, 129, 0),
-            0 0 20px rgba(16, 185, 129, 0),
-            0 0 30px rgba(16, 185, 129, 0);
+@keyframes text-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
     }
-    50% {
-        text-shadow: 
-            0 0 10px rgba(16, 185, 129, 0.4),
-            0 0 20px rgba(16, 185, 129, 0.3),
-            0 0 30px rgba(16, 185, 129, 0.2);
+    20%, 24%, 55% {
+        opacity: 0.4;
     }
 }
 
