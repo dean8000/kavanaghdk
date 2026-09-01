@@ -97,7 +97,8 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: #000;
+    color: rgba(16, 185, 129, 0.3);
+    mix-blend-mode: lighten;
 }
 
 @media (min-width: 640px) {
