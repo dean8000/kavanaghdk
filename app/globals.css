@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    to right,
+    rgb(52, 211, 153) 0%,
+    rgb(134, 239, 172) 20%,
+    rgb(52, 211, 153) 40%,
+    rgb(134, 239, 172) 60%,
+    rgb(52, 211, 153) 80%,
+    rgb(134, 239, 172) 100%
+  );
+  background-size: 2000px 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.orb {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.orb-delayed {
+  animation: pulse-glow 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
