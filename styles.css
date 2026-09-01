@@ -97,8 +97,8 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: rgba(16, 185, 129, 0.08);
-    mix-blend-mode: lighten;
+    color: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: screen;
 }
 
 @media (min-width: 640px) {
