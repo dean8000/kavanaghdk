@@ -22,7 +22,6 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom right, #0f172a, #064e3b);
-    animation: subtle-rotate 60s linear infinite;
 }
 
 .container::before {
@@ -143,15 +142,6 @@ body {
 }
 
 
-@keyframes subtle-rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes text-flicker {
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         opacity: 1;
@@ -198,10 +188,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .orb-1,
     .orb-2 {
-        animation: none;
-    }
-    
-    .container {
         animation: none;
     }
     
