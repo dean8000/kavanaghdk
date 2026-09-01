@@ -11,6 +11,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
+    cursor: none;
 }
 
 .container {
@@ -21,6 +22,27 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom right, #0f172a, #064e3b);
+    animation: subtle-rotate 60s linear infinite;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.15) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.15) 3px
+        ),
+        radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+    z-index: 100;
 }
 
 .grid {
@@ -34,6 +56,8 @@ body {
         linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
     opacity: 0.4;
+    transform: perspective(500px) rotateX(60deg) scale(2);
+    transform-origin: center bottom;
 }
 
 .orb {
@@ -99,6 +123,11 @@ body {
     letter-spacing: 0.1em;
     color: rgba(255, 255, 255, 0.05);
     mix-blend-mode: screen;
+    text-shadow: 
+        0 0 10px rgba(16, 185, 129, 0),
+        0 0 20px rgba(16, 185, 129, 0),
+        0 0 30px rgba(16, 185, 129, 0);
+    animation: text-flicker 8s infinite, text-glow 3s ease-in-out infinite;
 }
 
 @media (min-width: 640px) {
@@ -114,9 +143,73 @@ body {
 }
 
 
+@keyframes subtle-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes text-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes text-glow {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px rgba(16, 185, 129, 0),
+            0 0 20px rgba(16, 185, 129, 0),
+            0 0 30px rgba(16, 185, 129, 0);
+    }
+    50% {
+        text-shadow: 
+            0 0 10px rgba(16, 185, 129, 0.4),
+            0 0 20px rgba(16, 185, 129, 0.3),
+            0 0 30px rgba(16, 185, 129, 0.2);
+    }
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.6), transparent);
+    pointer-events: none;
+    z-index: 9999;
+    filter: blur(10px);
+    animation: fade-out 1s ease-out forwards;
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .orb-1,
     .orb-2 {
         animation: none;
+    }
+    
+    .container {
+        animation: none;
+    }
+    
+    .title {
+        animation: none;
+    }
+    
+    body {
+        cursor: default;
     }
 }

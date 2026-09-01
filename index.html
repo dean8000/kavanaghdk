@@ -13,5 +13,18 @@
         <div class="grid"></div>
         <h1 class="title">KAVANAGH.DK</h1>
     </div>
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.left = e.clientX + 'px';
+            trail.style.top = e.clientY + 'px';
+            document.body.appendChild(trail);
+            
+            setTimeout(() => trail.remove(), 1000);
+        });
+    </script>
 </body>
 </html>
