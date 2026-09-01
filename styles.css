@@ -44,8 +44,8 @@ body {
 }
 
 .orb-1 {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     background: radial-gradient(circle, #10b981, transparent);
     top: 20%;
     left: 15%;
@@ -53,8 +53,8 @@ body {
 }
 
 .orb-2 {
-    width: 400px;
-    height: 400px;
+    width: 180px;
+    height: 180px;
     background: radial-gradient(circle, #059669, transparent);
     bottom: 10%;
     right: 20%;
@@ -97,7 +97,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: rgba(16, 185, 129, 0.3);
+    color: rgba(16, 185, 129, 0.08);
     mix-blend-mode: lighten;
 }
 
