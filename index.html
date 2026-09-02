@@ -48,23 +48,6 @@
             setTimeout(() => orb.remove(), 3000);
         });
 
-        // Random stars
-        function createStar() {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.animationDelay = Math.random() * 3 + 's';
-            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            document.querySelector('.container').appendChild(star);
-            
-            setTimeout(() => star.remove(), 6000);
-        }
-
-        setInterval(createStar, 500);
-
         // Title flicker in browser tab
         let originalTitle = 'KAVANAGH.DK';
         let glitchTitle = 'K∆V∆N∆GH.DK';
